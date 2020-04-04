@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {Route} from 'react-router-dom'
+import AdminPage from './pages/AdminPage';
+import Home from './pages/Home';
+import Laptop from './pages/Laptop';
+import Handphone from './pages/Handphone';
+import Aksesoris from './pages/Aksesoris';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+          <Route path="/register" component={Register} />
+          <Route path="/admin" component={AdminPage} />
+          <Route path="/laptop" component={Laptop} />
+          <Route path="/handphone" component={Handphone} />
+          <Route path="/aksesoris" component={Aksesoris} />
+          <Route path="/allproducts" component={Home} />
+          <Route path="/" component={Login} exact/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
